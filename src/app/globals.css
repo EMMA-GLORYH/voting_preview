@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080c15;
+  --foreground: #f8fafc;
+  --panel-bg: rgba(13, 19, 33, 0.85);
+  --panel-border: rgba(30, 41, 59, 0.8);
+}
+
+body {
+  background-color: #080c15;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Hide Next.js development badges and overlays */
+nextjs-portal,
+[data-nextjs-dev-overlay],
+[data-nextjs-toast],
+div[data-nextjs-dev-tools-button],
+#next-route-announcer {
+  display: none !important;
+}
+
+/* Executive Broadcast Glass Cards */
+.broadcast-card {
+  background: rgba(13, 19, 33, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.broadcast-card:hover {
+  border-color: rgba(71, 85, 105, 0.65);
+}
+
+/* Rank 1: Top Scorer Executive Gold Glow */
+.top-scorer-card-dark {
+  background: linear-gradient(135deg, rgba(24, 21, 14, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.65);
+  box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.18), inset 0 1px 0 rgba(251, 191, 36, 0.2);
+}
+
+/* Rank 2: Second Top Scorer Cyan/Silver Glow */
+.second-scorer-card-dark {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(14, 28, 48, 0.9) 100%);
+  border: 1.5px solid rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 20px -4px rgba(14, 165, 233, 0.15), inset 0 1px 0 rgba(56, 189, 248, 0.15);
+}
+
+/* Rank 3+: Below Top Two Crimson Red Accent */
+.below-top-two-card-dark {
+  background: linear-gradient(135deg, rgba(23, 15, 18, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 16px -4px rgba(239, 68, 68, 0.12), inset 0 1px 0 rgba(248, 113, 113, 0.1);
+}
+
+/* Glowing Broadcast Progress Tracks */
+.progress-fill {
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-glow-gold {
+  background: linear-gradient(90deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.55);
+}
+
+.progress-glow-cyan {
+  background: linear-gradient(90deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%);
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.45);
+}
+
+.progress-glow-red {
+  background: linear-gradient(90deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Animated Broadcast Pulsing Badges */
+@keyframes broadcastPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.broadcast-live-badge {
+  animation: broadcastPulse 2s infinite ease-in-out;
+}
+
+/* Ticker marquee animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle clean scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080c15;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
